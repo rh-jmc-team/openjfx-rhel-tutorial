@@ -1,6 +1,6 @@
 # OpenJFX Tutorials
 
-[OpenJFX on RHEL]
+## OpenJFX on RHEL
 
 Since OpenJFX 11 the project has moved to a more open and healthy community development model, which means that binaries are now easy to obtain also as standalone jar files via maven. In some cases it may be necessary to still build your own distribution, so we will explain how to compile it by yourself. This tutorial assumes a current version of RHEL, specifically 8.1, but similar steps can be followed for any supported version of RHEL, CentOS or Fedora, and, in fact, they are valid for almost any operating system with minor adjustments. In this guide we will also assume you have maven and OpenJDK 11 correctly installed, please refer to the online documentation to see how to do this for your particular distribution.
 
@@ -10,7 +10,7 @@ A note about compatibility: OpenJFX is largely backward compatible with LTS vers
 
 If using maven is not an option, you may opt for building OpenJFX yourself or for downloading the community builds. The [OpenJFX website](https://openjfx.io/) provides a lot of useful information as well as community builds.
 
-[Use OpenJFX via Maven]
+## Use OpenJFX via Maven 
 
 The configuration via Maven is extremely easy since the libraries are distributed from maven central. Assuming you have a maven project you need to add some configuration, here is what's necessary for OpenJFX 14, which was just released:
 
@@ -80,7 +80,7 @@ In our case we are using a modularised application, so the command line argument
 java --module-path target/libs/javafx-base-14.jar:target/libs/javafx-base-14-linux.jar:target/libs/javafx-controls-14.jar:target/libs/javafx-controls-14-linux.jar:target/libs/javafx-controls-14-linux.jar:target/libs/javafx-graphics-14.jar:target/libs/javafx-graphics-14-linux.jar:target/openjfx-tutorials-1.0-SNAPSHOT.jar -m com.redhat.jfx.tutorials/com.redhat.jfx.tutorials.HelloWorldJFX
 ```
 
-[Create a JLink image]
+## Create a JLink image
 
 This will create a fully standalone image with a binary that will execute your application, again with all the necessary dependencies. The maven configuration for this is the following:
 
@@ -122,7 +122,7 @@ This is most useful for testing, the `javafx-maven-plugin` we just configured fo
 mvn clean package javafx:run
 ```
 
-[Build OpenJFX yourself]
+## Build OpenJFX yourself
 
 Building OpenJFX is relatively easy, but it will require some tools to be present on your system. Most of them are part of the standard RHEL installation or are available as modules or SCL extras, but some will need to be downloaded and set up before starting.
 
